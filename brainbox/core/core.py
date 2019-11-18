@@ -2,7 +2,7 @@
 Core data types and functions which support all of brainbox.
 '''
 import numpy as np
-
+import pandas as pd
 
 class Bunch(dict):
     """A subclass of dictionary with an additional dot syntax."""
@@ -63,3 +63,7 @@ class TimeSeries(dict):
     def copy(self):
         """Return a new TimeSeries instance which is a copy of the current TimeSeries instance."""
         return TimeSeries(super(TimeSeries, self).copy())
+    
+    def as_dataframe(self):
+        """returns a Panda data frame from the TimeSeries"""
+        warn('as_dataframe is not implemented')
